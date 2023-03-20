@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  id: number;
+  id: number | string;
   text: string;
   completed: boolean;
 }>();
 
 const emit = defineEmits<{
-  (e: 'toggle', id: number): void;
+  (e: 'toggle', id: number | string): void;
 }>();
 
 const toggle = () => {
@@ -27,13 +27,11 @@ const toggle = () => {
         class="outline-1 outline-purple-400"
       />
     </div>
-    <div class="ml-6">
-      <h4
-        class="text-md leading-tight"
-        :class="completed ? 'text-gray-500' : 'text-gray-900'"
-      >
-        {{ text }}
-      </h4>
+    <div
+      class="text-md ml-6 leading-tight"
+      :class="completed ? 'text-gray-500' : 'text-gray-900'"
+    >
+      {{ text }}
     </div>
   </label>
 </template>

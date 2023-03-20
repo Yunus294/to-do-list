@@ -22,7 +22,7 @@ const create = () => {
           v-model="text"
           class="w-full pl-3 focus:outline-none"
           type="text"
-          placeholder="What task do you need to complete?"
+          placeholder="What task do you need to create?"
         />
       </div>
       <button

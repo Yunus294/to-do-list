@@ -3,17 +3,17 @@ import TodoItem from './TodoItem.vue';
 
 const props = defineProps<{
   items: {
-    id: number;
+    id: number | string;
     text: string;
     completed: boolean;
   }[];
 }>();
 
 const emit = defineEmits<{
-  (e: 'toggle', id: number): void;
+  (e: 'toggle', id: number | string): void;
 }>();
 
-const toggle = (id: number) => {
+const toggle = (id: number | string) => {
   emit('toggle', id);
 };
 </script>
